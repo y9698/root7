@@ -19,11 +19,11 @@
 
     <script>
     var input = document.getElementById('file');
-input.addEventListener('change', function (e) {
-  var file = e.srcElement.files[0];
+        input.addEventListener('change', function (e) {
+    var file = e.srcElement.files[0];
 
-  var fr = new FileReader();
-  fr.addEventListener('load', function() {
+    var fr = new FileReader();
+    fr.addEventListener('load', function() {
     var url = fr.result;
 
     // Imageオブジェクトをつくり
