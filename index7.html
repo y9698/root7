@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        
+
+        <form method="post" action="" enctype="multipart/form-data">
+            <input type="file" id="file" name="img_file" class="">
+            <input type="submit" value="送信" class="btn">
+        </form>
+          <!-- {% if img_url %}
+          <p><img src="{{ img_url }}"></p>
+            {% endif %}
+          {% endblock %} -->
+
+    <script>
+    var input = document.getElementById('file');
+input.addEventListener('change', function (e) {
+  var file = e.srcElement.files[0];
+
+  var fr = new FileReader();
+  fr.addEventListener('load', function() {
+    var url = fr.result;
+
+    // Imageオブジェクトをつくり
+    var img = new Image();
+    // srcにurlを指定する
+    img.src = url;
+    // そのままだとでかすぎるのでサイズ調整して
+    img.height = 200;
+    // bodyに追加する
+    document.body.appendChild(img);
+  });
+  fr.readAsDataURL(file);
+});
+    
+    
+    
+    </script>
+
+    
+</body>
+</html>
