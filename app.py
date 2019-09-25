@@ -7,6 +7,9 @@ import json
 import jsonify
 import numpy as np
 #import matplotlib.pyplot as plt
+import io 
+import urllib.request
+from PIL import Image
 
 
 #import io 
@@ -35,6 +38,12 @@ def sample():
 @app.route('/index2', methods=["POST"])
 def sample2():
     x_test = request.form['img_file']
+
+    x_test = io.BytesIO(x_test)
+    # Pillowで開き、画像を保存する
+    x_test = Image.open(x_test)
+
+
     ximg_rows, img_cols = 28, 28
 
     x_test = x_test.reshape(x_test.shape[0], img_rows, img_cols, 1)
