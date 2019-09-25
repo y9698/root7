@@ -28,7 +28,7 @@ app = Flask(__name__)
 @app.route('/')
 def sample():
     #name = 'heroku practice1'
-    return render_template(template('index.html')
+    return render_template('index.html')
 
 @app.route('/index2', methods=["POST"])
 def sample2():
