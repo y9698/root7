@@ -5,6 +5,7 @@ import requests
 import json
 import jsonify
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 #import io 
