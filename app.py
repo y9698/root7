@@ -34,7 +34,7 @@ def sample():
 
 @app.route('/index2', methods=["POST"])
 def sample2():
-    x_test = img.src
+    x_test = requests.form['img_file']
     ximg_rows, img_cols = 28, 28
 
     x_test = x_test.reshape(x_test.shape[0], img_rows, img_cols, 1)
