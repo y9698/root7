@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 #from flask import requests
 #from tensorflow.keras.datasets import mnist
-#import requests
+import requests
 #import request
 import json
 import jsonify
@@ -50,7 +50,7 @@ def sample2():
 
 
     API_URL = 'https://root67.herokuapp.com/'
-    res = request.post(API_URL, json=data)
+    res = requests.post(API_URL, json=data)
 
     result = []
     for v in res :
