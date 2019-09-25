@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 #from flask import requests
 #from tensorflow.keras.datasets import mnist
-import requests
+#import requests
 #import request
 import json
 import jsonify
