@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
+{% if x_test %}
+ <p> exist!</p>
+ {% endif %}
 <p>{{ name2 }}</p>
 
 <p>答えは{{ result }} </p>
