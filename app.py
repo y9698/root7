@@ -30,11 +30,11 @@ app = Flask(__name__)
 @app.route('/')
 def sample():
     #name = 'heroku practice1'
-    return render_template('index.html',img=img)
+    return render_template('index.html')
 
-@app.route('/index2', methods=["GET","POST"])
+@app.route('/index2', methods=["POST"])
 def sample2():
-    x_test = img
+    x_test = img.src
     ximg_rows, img_cols = 28, 28
 
     x_test = x_test.reshape(x_test.shape[0], img_rows, img_cols, 1)
