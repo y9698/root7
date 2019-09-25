@@ -36,7 +36,7 @@ def sample():
     return render_template('index.html', name=name)
 
 @app.route('/index2', methods=["POST"])
-def sample2():
+def index2():
     x_test = request.form['img_file']
 
     x_test = io.BytesIO(x_test)
