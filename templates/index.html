@@ -1,21 +1,14 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
   <!--<input type="file" id="file" name="img_file" class="">-->
-        <form method="post" action="" enctype="multipart/form-data">
+        <form method="post" action="/index2" enctype="multipart/form-data">
             <input type="file" id="file" name="img_file" class="">
             <input type="submit" value="送信" class="btn">
         </form>
-          <!-- {% if img_url %}
+        <!--{% if img_url %}
           <p><img src="{{ img_url }}"></p>
-            {% endif %}
-          {% endblock %} -->
+            {% endif %} -->
+          
 
     <script>
     var input = document.getElementById('file');
@@ -36,12 +29,11 @@
     document.body.appendChild(img);
   });
   fr.readAsDataURL(file);
+  
 });
     
     
     
     </script>
 
-    
-</body>
-</html>
+{% endblock %}
