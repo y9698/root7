@@ -40,9 +40,9 @@ def sample2():
     name2 = "here is index2"
     x_test = request.form['img_file']
 
-    #x_test = io.BytesIO(x_test)
+    x_test = io.BytesIO(x_test)
     # Pillowで開き、画像を保存する
-    #x_test = Image.open(x_test)
+    x_test = Image.open(x_test)
 
 
     img_rows, img_cols = 28, 28
