@@ -1,4 +1,5 @@
-from flask import Flask, render_template, requests
+from flask import Flask, render_template
+#from flask import requests
 #from tensorflow.keras.datasets import mnist
 import requests
 #import request
