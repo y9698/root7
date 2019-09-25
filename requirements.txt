@@ -5,3 +5,4 @@ numpy==1.16.5
 jsonify==0.5
 json5==0.8.5
 tensorflow==1.14.0
+numpy==1.16.5
