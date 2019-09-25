@@ -63,7 +63,7 @@ def sample2():
     result = int(result[0]['prediction'][0])
     #print("もしかしたら：",result,"？かも")
 
-    return render_template("index2. html", result = result)
+    return render_template("index2.html", result = result)
 
 
 
