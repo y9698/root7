@@ -42,7 +42,7 @@ def sample2():
 
     x_test = io.BytesIO(x_test)
     # Pillowで開き、画像を保存する
-    x_test = Image.open(x_test)
+    x_test = Image.open(x_test).convert('L')
 
 
     img_rows, img_cols = 28, 28
@@ -50,6 +50,8 @@ def sample2():
     x_test = x_test.reshape(x_test.shape[0], img_rows, img_cols, 1)
     x_test = x_test.astype('float32')
     x_test /= 255
+    x_test = 1- np.array(x_test)
+    X_test = x_test.reshape(1,784)
 
     test = x_test
     test = (np.expand_dims(test,0))
