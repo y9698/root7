@@ -52,7 +52,7 @@ def sample2():
     x_test /= 255
 
     test = x_test
-    test = (np.epand_dims(test,0))
+    test = (np.expand_dims(test,0))
 
     data = {
         'images': test.tolist()
