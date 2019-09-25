@@ -44,7 +44,7 @@ def sample2():
     x_test = Image.open(x_test)
 
 
-    ximg_rows, img_cols = 28, 28
+    img_rows, img_cols = 28, 28
 
     x_test = x_test.reshape(x_test.shape[0], img_rows, img_cols, 1)
     x_test = x_test.astype('float32')
