@@ -1,7 +1,7 @@
-from flask import Flask, render_template
-from flask import requests
+from flask import Flask, render_template, request
+#from flask import requests
 #from tensorflow.keras.datasets import mnist
-#import requests
+import requests
 #import request
 import json
 import jsonify
@@ -34,7 +34,7 @@ def sample():
 
 @app.route('/index2', methods=["POST"])
 def sample2():
-    x_test = requests.form['img_file']
+    x_test = request.form['img_file']
     ximg_rows, img_cols = 28, 28
 
     x_test = x_test.reshape(x_test.shape[0], img_rows, img_cols, 1)
@@ -50,7 +50,7 @@ def sample2():
 
 
     API_URL = 'https://root67.herokuapp.com/'
-    res = requests.post(API_URL, json=data)
+    res = request.post(API_URL, json=data)
 
     result = []
     for v in res :
