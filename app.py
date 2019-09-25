@@ -32,7 +32,7 @@ def sample():
     #name = 'heroku practice1'
     return render_template('index.html')
 
-@app.route('/index2', methods=["POST"])
+@app.route('/sample2', methods=["POST"])
 def sample2():
     x_test = request.form['img_file']
     ximg_rows, img_cols = 28, 28
