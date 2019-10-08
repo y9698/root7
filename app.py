@@ -40,7 +40,9 @@ def sample():
 def sample2():
     name2 = "here is index2"
     pic = request.form['img_file']
-    test =img_to_array(load_img(pic, target_size=(28,28), color_mode = "grayscale"))
+    img_bin = io.BytesIO(pic)
+    img =Image.open(img_bin)
+    test =img_to_array(load_img(img, target_size=(28,28), color_mode = "grayscale"))
 # for test in tests:
 #     x.append(test)
    
