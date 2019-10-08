@@ -73,26 +73,24 @@ x = (np.expand_dims(x,0))
     # test = x_test
     # test = (np.expand_dims(test,0))
 
-    data = {
-        'images': x.tolist()
-    }
+data = {'images': x.tolist()}
 
 
-    API_URL = 'https://root67.herokuapp.com/'
-    res = requests.post(API_URL, json=data)
+API_URL = 'https://root67.herokuapp.com/'
+res = requests.post(API_URL, json=data)
 
-    result = []
-    for v in res :
-        try:
-            js = json.loads(v)
-            result.append( js['data'] )
-        except Exception:
-            pass
+result = []
+for v in res :
+    try:
+        js = json.loads(v)
+        result.append( js['data'] )
+    except Exception:
+        pass
 
-    result = int(result[0]['prediction'][0])
-    #print("もしかしたら：",result,"？かも")
+result = int(result[0]['prediction'][0])
+#print("もしかしたら：",result,"？かも")
 
-    return render_template("index2.html", result = result, name2=name2)
+return render_template("index2.html", result = result, name2=name2)
 
 
 
