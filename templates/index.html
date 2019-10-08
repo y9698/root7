@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-  <input type="file" id="file" name="img_file" class="">
-        <!-- <form method="post" action="/index2" enctype="multipart/form-data">
-            <input type="file" id="file" class="">
-            <!-- <input type="submit" value="送信" class="btn"> 
-        </form> -->
+  <!-- <input type="file" id="file"  class=""> -->
+        <form method="post" action="/index2" enctype="multipart/form-data">
+            <input type="file" id="file" name="img_file" class="">
+            <input type="submit" value="select_OK" class="btn"> 
+        </form>
         <!--{% if img_url %}
           <p><img src="{{ img_url }}"></p>
             {% endif %} -->
@@ -36,9 +36,11 @@
     
      // アップロード開始ボタンがクリックされたら
   $('#upload').click(function(){
+      var img=null
+      var blob=null
 
 // ファイルが指定されていなければ何も起こらない
-if(!file || !blob) {
+if(!img || !blob) {
   return;
 }
 
