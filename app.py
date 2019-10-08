@@ -46,15 +46,15 @@ def sample2():
    
 
 #test = x.reshape(1,2352)
-x=np.asarray(test)
+    x=np.asarray(test)
 # print("shape===", x.shape)
 
 #x= np.squeeze(x)
 #x=np.asarray(x)
-x=x.astype('float32')
+    x=x.astype('float32')
 #x=x.reshape(2352,1)
-x = 1-x/255.0
-x = (np.expand_dims(x,0))
+    x = x/255.0
+    x = (np.expand_dims(x,0))
 #print("x;",x)
 # print('x:',x)
     # x_test = io.BytesIO(x_test)
@@ -73,24 +73,24 @@ x = (np.expand_dims(x,0))
     # test = x_test
     # test = (np.expand_dims(test,0))
 
-data = {'images': x.tolist()}
+    data = {'images': x.tolist()}
 
 
-API_URL = 'https://root67.herokuapp.com/'
-res = requests.post(API_URL, json=data)
+    API_URL = 'https://root67.herokuapp.com/'
+    res = requests.post(API_URL, json=data)
 
-result = []
-for v in res :
-    try:
-        js = json.loads(v)
-        result.append( js['data'] )
-    except Exception:
-        pass
+    result = []
+    for v in res :
+        try:
+            js = json.loads(v)
+            result.append( js['data'] )
+        except Exception:
+            pass
 
-result = int(result[0]['prediction'][0])
-#print("もしかしたら：",result,"？かも")
+    result = int(result[0]['prediction'][0])
+    #print("もしかしたら：",result,"？かも")
 
-return render_template("index2.html", result = result, name2=name2)
+    return render_template("index2.html", result = result, name2=name2)
 
 
 
