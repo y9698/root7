@@ -36,16 +36,16 @@
     
      // アップロード開始ボタンがクリックされたら
   $('#upload').click(function(){
-      var img=null
-      var blob=null
+      //var img=null
+      //var blob=null
 
 // ファイルが指定されていなければ何も起こらない
-if(!img || !blob) {
+if(!file || !blob) {
   return;
 }
 
         var name, fd = new FormData();
-        fd.append('img', blob); // ファイルを添付する
+        fd.append('file', base64); // ファイルを添付する
 
         $.ajax({
           url: "https://root67.herokuapp.com/", // 送信先
