@@ -9,6 +9,7 @@ import numpy as np
 #import matplotlib.pyplot as plt
 import io 
 import urllib.request
+from tensorflow.python.keras.preprocessing.image import array_to_img, img_to_array, load_img
 from PIL import Image
 
 
@@ -38,26 +39,42 @@ def sample():
 @app.route('/index2', methods=["POST"])
 def sample2():
     name2 = "here is index2"
-    x_test = request.form['img_file']
+    pic = request.form['img_file']
+    test =img_to_array(load_img(pic, target_size=(28,28), color_mode = "grayscale"))
+# for test in tests:
+#     x.append(test)
+   
 
-    x_test = io.BytesIO(x_test)
-    # Pillowで開き、画像を保存する
-    x_test = Image.open(x_test).convert('L')
+#test = x.reshape(1,2352)
+x=np.asarray(test)
+# print("shape===", x.shape)
+
+#x= np.squeeze(x)
+#x=np.asarray(x)
+x=x.astype('float32')
+#x=x.reshape(2352,1)
+x = 1-x/255.0
+x = (np.expand_dims(x,0))
+#print("x;",x)
+# print('x:',x)
+    # x_test = io.BytesIO(x_test)
+    # # Pillowで開き、画像を保存する
+    # x_test = Image.open(x_test).convert('L')
 
 
-    img_rows, img_cols = 28, 28
+    # img_rows, img_cols = 28, 28
 
-    x_test = x_test.reshape(x_test.shape[0], img_rows, img_cols, 1)
-    x_test = x_test.astype('float32')
-    x_test /= 255
+    # x_test = x_test.reshape(x_test.shape[0], img_rows, img_cols, 1)
+    # x_test = x_test.astype('float32')
+    # x_test /= 255
     #x_test = 1- np.array(x_test)
     #X_test = x_test.reshape(1,784)
 
-    test = x_test
-    test = (np.expand_dims(test,0))
+    # test = x_test
+    # test = (np.expand_dims(test,0))
 
     data = {
-        'images': test.tolist()
+        'images': x.tolist()
     }
 
 
