@@ -34,7 +34,7 @@ app = Flask(__name__)
 @app.route('/')
 def sample():
     name = 'heroku upload test'
-    img = requests.form['img_file']
+    img = request.form['img_file']
     print("imgfile",img)
     return render_template('index.html', name=name)
 
