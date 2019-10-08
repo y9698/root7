@@ -34,13 +34,15 @@ app = Flask(__name__)
 @app.route('/')
 def sample():
     name = 'heroku upload test'
+    img = requests.form['img_file']
+    print("imgfile",img)
     return render_template('index.html', name=name)
 
 @app.route('/index2', methods=["POST"])
 def sample2():
     name2 = "here is index2"
     pic = request.form['img_file']
-    print("pic",pic)
+    #print("pic",pic)
     # img_bin = io.BytesIO(pic)
     # img =Image.open(img_bin)
     test =img_to_array(load_img(pic, target_size=(28,28), color_mode = "grayscale"))
