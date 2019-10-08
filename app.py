@@ -41,8 +41,8 @@ def sample():
 @app.route('/index2', methods=["POST"])
 def sample2():
     name2 = "here is index2"
-    #pic = request.files['img']
-    pic = urllib.request.urlopen(url).read()
+    pic = request.form['img']
+    #pic = urllib.request.urlopen(url).read()
     #print("pic",pic)
     # img_bin = io.BytesIO(pic)
     # img =Image.open(img_bin)
