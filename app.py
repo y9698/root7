@@ -58,7 +58,7 @@ def sample2():
 #x=np.asarray(x)
     x=x.astype('float32')
 #x=x.reshape(2352,1)
-    x = x/255.0
+    x = 1-x/255.0
     x = (np.expand_dims(x,0))
 #print("x;",x)
 # print('x:',x)
