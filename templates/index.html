@@ -2,14 +2,14 @@
 {% block content %}
   <!--<input type="file" id="file" name="img_file" class="">-->
         <form method="post" action="/index2" enctype="multipart/form-data">
-            <input type="file" id="file" name="img_file" class="">
+            <input type="file" id="file" class="">
             <input type="submit" value="送信" class="btn">
         </form>
         <!--{% if img_url %}
           <p><img src="{{ img_url }}"></p>
             {% endif %} -->
         <p>progressing...{{ name }}</p>
-
+        <button class="btn btn-primary" id="upload">投稿</button>
     <script>
     var input = document.getElementById('file');
         input.addEventListener('change', function (e) {
@@ -32,7 +32,35 @@
           
     });
     
-    
+     // アップロード開始ボタンがクリックされたら
+  $('#upload').click(function(){
+
+// ファイルが指定されていなければ何も起こらない
+if(!file || !blob) {
+  return;
+}
+
+        var name, fd = new FormData();
+        fd.append('img', blob); // ファイルを添付する
+
+        $.ajax({
+          url: "https://root67.herokuapp.com/", // 送信先
+          type: 'POST',
+          dataType: 'json',
+          data: fd,
+          processData: false,
+          contentType: false
+        })
+        .done(function( data, textStatus, jqXHR ) {
+          // 送信成功
+        })
+        .fail(function( jqXHR, textStatus, errorThrown ) {
+          // 送信失敗
+        });  
+
+
+
+
     
     </script>
 
