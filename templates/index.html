@@ -35,32 +35,32 @@
     });
     
      // アップロード開始ボタンがクリックされたら
-  $('#upload').click(function(){
-      //var img=null
-      //var blob=null
+//   $('#upload').click(function(){
+//       //var img=null
+//       //var blob=null
 
-// ファイルが指定されていなければ何も起こらない
-if(!file || !blob) {
-  return;
-}
+// // ファイルが指定されていなければ何も起こらない
+// if(!file || !blob) {
+//   return;
+// }
 
-        var name, fd = new FormData();
-        fd.append('file', base64); // ファイルを添付する
+//         var name, fd = new FormData();
+//         fd.append('file', base64); // ファイルを添付する
 
-        $.ajax({
-          url: "https://root67.herokuapp.com/", // 送信先
-          type: 'POST',
-          dataType: 'json',
-          data: fd,
-          processData: false,
-          contentType: false
-        })
-        .done(function( data, textStatus, jqXHR ) {
-          // 送信成功
-        })
-        .fail(function( jqXHR, textStatus, errorThrown ) {
-          // 送信失敗
-        });  
+//         $.ajax({
+//           url: "https://root67.herokuapp.com/", // 送信先
+//           type: 'POST',
+//           dataType: 'json',
+//           data: fd,
+//           processData: false,
+//           contentType: false
+//         })
+//         .done(function( data, textStatus, jqXHR ) {
+//           // 送信成功
+//         })
+//         .fail(function( jqXHR, textStatus, errorThrown ) {
+//           // 送信失敗
+//         });  
 
 
 
